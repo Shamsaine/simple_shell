@@ -1,36 +1,24 @@
-#include "header.h"
-
+#include "s_sh.h"
 /**
- * main - entry point
+ * show - this is a function to display prompt
  *
  * Return: 0
  */
-
-int main(void)
+void show()
 {
-	char command[MAX_COMMAND_LENGTH];
+	char *shellname = "MOH & SHAMS> ";
 
-	while (1)
-	{
-		printf("MOH & SHAMS> ");
-		fgets(command, sizeof(command), stdin);
+	write(1, shellname, strlen(shellname));
+}
 
-		if (command[strlen(command) - 1] == '\n')
-		{
-			command[strlen(command) - 1] = '\0';
-		}
+/**
+ * userintake - this function takes in user input
+ *
+ * Return: always 0
+ */
+void userintake()
+{
+	char *command;
 
-		if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
-		{
-			break;
-		}
-
-		else
-		{
-			system(command);
-		}
-	}
-
-	printf("Shell closed.\n");
-	return (0);
+	fgets(command, sizeof(command), stdin);
 }
