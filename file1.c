@@ -24,13 +24,21 @@ void userintake(char *command)
 
 	length = strlen(command);
 
-	if (fgets(command, sizeof(command), stdin) == NULL)
+	while (1)
 	{
-		printf("\n");
-		/*break;*/
-	}
-	if (command[length - 1] == '\n')
-	{
-		command[length - 1] = '\0';
+		if (fgets(command, sizeof(command), stdin) == NULL)
+		{
+			printf("\n");
+			break;
+		}
+		if (command[length - 1] == '\n')
+		{
+			command[length - 1] = '\0';
+		}
+		if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
+		{
+			;
+		}
+		break;
 	}
 }
