@@ -1,24 +1,17 @@
 #include "s_sh.h"
 /**
- * show - this is a function to display prompt
- *
- * Return: 0
- */
-void show()
-{
-	char *shellname = "MOH & SHAMS> ";
-
-	write(1, shellname, strlen(shellname));
-}
-
-/**
- * userintake - this function takes in user input
+ * main - this is a function
  *
  * Return: always 0
  */
-void userintake()
+int main(void)
 {
-	char *command;
+	char command[UTTERMOST_LENGTH];
 
-	fgets(command, sizeof(command), stdin);
+	while (true)
+	{
+		show();
+		userintake(command);
+	}
+	return (0);
 }
