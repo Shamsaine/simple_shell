@@ -2,7 +2,7 @@
 
 /**
  * errorhandle - function that handles wrong commands and errors
- *
+ * @command: parameter
  *
  */
 
@@ -13,6 +13,7 @@ void errorhandle(char *command)
 	if (pid == 0)
 	{
 		char *args[2];
+
 		args[0] = command;
 		args[1] = NULL;
 
@@ -26,7 +27,6 @@ void errorhandle(char *command)
 	{
 		wait(NULL);
 	}
-
 	else
 	{
 		perror("Error");

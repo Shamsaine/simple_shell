@@ -13,5 +13,6 @@
 void show(void);
 void userintake(char *command);
 void errorhandle(char *command);
+void process(void);
 
 #endif

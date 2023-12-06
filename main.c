@@ -12,6 +12,7 @@ int main(void)
 	{
 		show();
 		userintake(command);
+		process();
 		errorhandle(command);
 
 		/*if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
