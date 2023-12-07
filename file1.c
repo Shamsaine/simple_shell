@@ -33,10 +33,12 @@ void show(void)
                 if (feof(stdin))
                 {
                         printf("End of file reached.\n");
+			break;
                 }
                 else if (ferror(stdin))
                 {
                         perror("Error reading from stdin");
+			break;
                 }
         }
 	if (fgets(command, sizeof(command), stdin) == NULL)
@@ -65,12 +67,14 @@ void userintake(char *command)
 		    if (feof(stdin))
 		    {
 			    printf("End of file reached.\n");
+			    break;
 		    }
 		    else if (ferror(stdin))
 		    {
 			    perror("Error reading from stdin");
+			    break;
 		    }
-		    break;  /*Exit the loop on EOF or error*/
+		    /*break;*/  /*Exit the loop on EOF or error*/
 	    }
 	    
 	    length = strlen(command);
@@ -86,6 +90,6 @@ void userintake(char *command)
 	    }
 
         /* Process the character*/
-	    printf("You entered: %s\n", command);
+	    /*printf("You entered: %s\n", command);*/
     }
 }
