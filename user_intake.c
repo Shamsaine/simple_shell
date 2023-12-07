@@ -44,12 +44,12 @@
 		}
 		break;
 }*/
-void userintake(char *command)
+void userintake(char *command, size_t bufsize)
 {
 	size_t length;
 	while (1)
 	{
-	    if (fgets(command, sizeof(command), stdin) == NULL)
+	    if (fgets(command, bufsize, stdin) == NULL)
 	    {
             /* Handle end-of-file or error*/
 		    if (feof(stdin))
