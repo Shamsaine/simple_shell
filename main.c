@@ -8,12 +8,13 @@ int main(void)
 {
 	char command[UTTERMOST_LENGTH];
 
-	while (true)
+	while (1)
 	{
 		show();
-		userintake(command);
+		userintake(command, sizeof(command));
 		process();
 		errorhandle(command);
+		break;
 	}
 	return (0);
 }

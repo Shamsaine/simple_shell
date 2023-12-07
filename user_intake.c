@@ -62,6 +62,11 @@ void userintake(char *command, size_t bufsize)
 			    perror("Error reading from stdin");
 			    break;
 		    }
+		    else
+		    {
+			    printf("unknown command error\n");
+			    break;
+		    }
 		    /*break;*/  /*Exit the loop on EOF or error*/
 	    }
 	    

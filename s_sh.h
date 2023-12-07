@@ -11,7 +11,7 @@
 #include <stdbool.h>
 
 void show(void);
-void userintake(char *command);
+void userintake(char *command, size_t bufsize);
 void errorhandle(char *command);
 void process(void);
 
