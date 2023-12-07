@@ -1,4 +1,4 @@
-
+#include "s_sh.h"
 /**
  * userintake - this function takes in user input
  * @command: parameter
