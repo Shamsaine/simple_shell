@@ -14,7 +14,7 @@ int main(void)
 		userintake(command, sizeof(command));
 		process();
 		errorhandle(command);
-		break;
+		/*break;*/
 	}
 	return (0);
 }
