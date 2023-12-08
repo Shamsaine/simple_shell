@@ -52,8 +52,7 @@ int main(void)
             /*userintake(command, sizeof(command));*/
 
 		process();
-		errorhandle(command);
-		/*break;*/
+	
 	}
 	return (0);
 }
