@@ -8,28 +8,28 @@
 void userintake(char *command, size_t bufsize)
 {
 	size_t length;
-	while (1)
+	
+	if (fgets(command, bufsize, stdin) == NULL)
 	{
-	    if (fgets(command, bufsize, stdin) == NULL)
-	    {
-            
+		printf("\n");
+		return;
 
-		    if (feof(stdin))
+            	if (feof(stdin))
 		    {
 			    printf("End of file reached.\n");
-			    break;
+			    return;
 		    }
 		    else if (ferror(stdin))
 		    {
 			    perror("Error reading from stdin");
-			    break;
+			    return;
 		    }
 		    else
 		    {
 			    printf("unknown command error\n");
-			    break;
+			    return;
 		    }
-		    break;
+		    return;
 	    }
 	    
 	    length = strlen(command);
@@ -41,7 +41,7 @@ void userintake(char *command, size_t bufsize)
 	    if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
 	    {
 		    printf("Exiting...\n");
-		    break;
+		    return;
 	    }
-    }
+	    /*userintake(command, sizeof(command));*/
 }
