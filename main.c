@@ -7,7 +7,9 @@
 int main(void)
 {
 	char command[UTTERMOST_LENGTH];
+	char *argv[MAX_ARGS];
 	size_t length;
+	int num_args;
 
 	while (1)
 	{
@@ -29,14 +31,7 @@ int main(void)
                     else if (ferror(stdin))
                     {
                             perror("Error reading from stdin");
-                          
-                    }
-                    else
-                    {
-                            printf("unknown command error\n");
-                           
-                    }
-                                
+                    }              
 
             length = strlen(command);
 
@@ -50,9 +45,12 @@ int main(void)
                     break;
             }
             /*userintake(command, sizeof(command));*/
+	    num_args = parse_input(command, argv);
 
+        if (num_args > 0) 
+	{
 		process();
-	
+	}
 	}
 	return (0);
 }
