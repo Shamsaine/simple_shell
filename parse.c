@@ -1,14 +1,14 @@
 #include "s_sh.h"
-int parse_input(char *input, char *argv[]) {
+int parse_command(char *command, char *argv[]) {
     int i = 0;
 
     /* Tokenize the input*/
-    char *token = strtok(input, " \t\n");
+    char *token = strtok(command, " ");
 
     while (token != NULL && i < MAX_ARGS - 1) {
         argv[i] = token;
         i++;
-        token = strtok(NULL, " \t\n");
+        token = strtok(NULL, " ");
     }
 
     argv[i] = NULL; /*Set the last element to NULL for execve*/

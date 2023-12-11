@@ -1,8 +1,8 @@
 #include "s_sh.h"
 
-char get_path(const charcommand) {
+char get_path(const char command) {
     char path_env = getenv("PATH");
-    charpath = strtok(path_env, ":");
+    char path = strtok(path_env, ":");
 
     while (path != NULL) {
         char *full_path = malloc(strlen(path) + strlen(command) + 2);

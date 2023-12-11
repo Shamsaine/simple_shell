@@ -4,7 +4,7 @@
 	pid_t pid;
 	int val;
 	
-	char *argv[] = {"/bin/pwd", NULL};
+	char *argv[] = {"/bin/ls", NULL};
 	pid = fork();
 	
 	if (pid == -1)
@@ -30,7 +30,6 @@
 void process(void)
 {
 	pid_t pid;
-	int val;
 	char *full_path;
 
 	pid = fork();
@@ -44,7 +43,7 @@ void process(void)
 		full_path = get_path(argv[0]);
 		if (full_path != NULL)
 		{
-		val = execve(full_path, argv, NULL);
+		execve(full_path, argv, NULL);
 		free(full_path);
 		perror("Error");
 		exit(EXIT_FAILURE);
