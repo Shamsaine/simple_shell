@@ -16,5 +16,6 @@ void show(void);
 void errorhandle(char *command);
 void process(void);
 int parse_input(char *input, char *args[]);
+char get_path(const char *command);
 
 #endif
