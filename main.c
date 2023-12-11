@@ -45,7 +45,7 @@ int main(void)
                     break;
             }
             /*userintake(command, sizeof(command));*/
-	    num_args = parse_input(command, argv);
+	    num_args = parse_command(command, argv);
 
         if (num_args > 0) 
 	{

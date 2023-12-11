@@ -7,8 +7,13 @@ int parse_command(char *command, char *argv[]) {
 
     while (token != NULL && i < MAX_ARGS - 1) {
         argv[i] = token;
+<<<<<<< HEAD
         i++;
         token = strtok(NULL, " ");
+=======
+        token = strtok(NULL, " ");
+	i++;
+>>>>>>> 7a48ad79b7abb1937e501183c51e29495c34b801
     }
 
     argv[i] = NULL; /*Set the last element to NULL for execve*/
