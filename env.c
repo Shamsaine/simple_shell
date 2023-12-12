@@ -7,8 +7,6 @@ void printEnvironment()
 	char **env;
 
 	printf("Current Environment:\n");
-	
-	/*char **env;*/
 
 	for (env = environ; *env != NULL; env++)
 	{

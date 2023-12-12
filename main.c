@@ -44,12 +44,5 @@ int main(void)
 			process(command);
 		}
 	}
-		/*if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
-		{
-			printf("Exiting...\n");
-			break;
-		}
-		process(command);
-	}*/
 	return (0);
 }
