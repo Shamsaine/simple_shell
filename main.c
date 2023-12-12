@@ -32,10 +32,24 @@ int main(void)
 		}
 		if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
 		{
+			exitShell();
+			break;
+		}
+		else if (strcmp(command, "env") == 0)
+		{
+			printEnvironment();
+		}
+		else
+		{
+			process(command);
+		}
+	}
+		/*if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
+		{
 			printf("Exiting...\n");
 			break;
 		}
 		process(command);
-	}
+	}*/
 	return (0);
 }

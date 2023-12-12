@@ -32,6 +32,7 @@ void process(char *command)
 		if (execve(file_path, argv, NULL) == -1)
 		{
 			perror("error");
+			free(file_path);
 			exit(EXIT_FAILURE);
 		}
 		else
