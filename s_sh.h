@@ -14,8 +14,8 @@
 void show(void);
 /*void userintake(char *command, size_t bufsize);*/
 void errorhandle(char *command);
-void process(void);
-int parse_command(char *command, char *args[]);
+void process(char *command);
+/*int parse_command(char *command, char *args[]);*/
 char *get_path(const char *command);
 
 #endif

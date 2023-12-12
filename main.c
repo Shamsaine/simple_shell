@@ -7,9 +7,9 @@
 int main(void)
 {
 	char command[UTTERMOST_LENGTH];
-	char *argv[MAX_ARGS];
+	/*char *argv[MAX_ARGS];*/
 	size_t length;
-	int num_args;
+	/*int num_args;*/
 
 	while (1)
 	{
@@ -45,12 +45,13 @@ int main(void)
                     break;
             }
             /*userintake(command, sizeof(command));*/
-	    num_args = parse_command(command, argv);
+	   /* num_args = parse_command(command, argv);
 
         if (num_args > 0) 
 	{
 		process();
-	}
+	}*/
+	    process(command);
 	}
 	return (0);
 }
