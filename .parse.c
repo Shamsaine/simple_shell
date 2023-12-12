@@ -1,6 +1,8 @@
 #include "s_sh.h"
-int parse_command(char *command, char *argv[]) {
-    int i = 0;
+int parse_command(char *command, char *argv[MAX_ARGS]) {
+    
+	/*char *argv[MAX_ARGS];*/
+	int i = 0;
 
     /* Tokenize the input*/
     char *token = strtok(command, " ");

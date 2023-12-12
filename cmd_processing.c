@@ -1,21 +1,45 @@
 #include "s_sh.h"
-/*void process(void)
+
+void process(char *command)
 {
-	pid_t pid;
-	int val;
+	/*char *argv[MAX_ARGS];*/
+        int i = 0;
+
+   	 /* Tokenize the input*/
+    	char *token = strtok(command, " ");
+
+	  pid_t pid;
+        char *file_path;
+	char *argv[MAX_ARGS];
+
+    while (token != NULL && i < MAX_ARGS - 1) {
+        argv[i] = token;
+        token = strtok(NULL, " ");
+        i++;
+    }
+
+    argv[i] = NULL; /*Set the last element to NULL for execve*/
 	
-	char *argv[] = {"/bin/ls", NULL};
+	/*char *argv[MAX_ARGS];*/
+	/*pid_t pid;
+	char *file_path;*/
+	
+	/*int val;*/
+	
+	/*char *argv[] = {"/bin/ls", NULL};*/
+	/*parse_command(command, args[])*/
+
 	pid = fork();
 	
 	if (pid == -1)
 	{
-		return;
+		perror("error");
+		exit(EXIT_FAILURE);
 	}
 	if (pid == 0)
 	{
-		
-		val = execve(argv[0], argv, NULL);
-		if (val == -1)
+		file_path = get_path(argv[0]);	
+		if (execve(file_path, argv, NULL) == -1)
 		{
 			perror("error");
 			exit(EXIT_FAILURE);
@@ -25,9 +49,9 @@
 	{
 		wait(NULL);
 	}
-	return;
-}*/
-void process(void)
+}
+
+/*void process(void)
 {
 	char *argv[MAX_ARGS];
 	pid_t pid;
@@ -59,4 +83,4 @@ void process(void)
 	{
 		wait(NULL);
 	}
-}
+}*/
