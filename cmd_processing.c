@@ -37,7 +37,12 @@ void process(char *command)
 		}
 		else
 		{
-			wait(NULL);
+			execve(file_path, argv, NULL);
+			/*wait(NULL);*/
 		}
+	}
+	else
+	{
+		wait(NULL);
 	}
 }

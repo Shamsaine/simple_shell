@@ -4,6 +4,7 @@
  *
  * Return: always 0
  */
+
 int main(void)
 {
 	char command[UTTERMOST_LENGTH];
@@ -32,17 +33,18 @@ int main(void)
 		}
 		if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
 		{
-			exitShell();
+			shellexit();
 			break;
 		}
 		else if (strcmp(command, "env") == 0)
 		{
-			printEnvironment();
+			printenv();
 		}
 		else
 		{
 			process(command);
 		}
 	}
+	printf("Shell Closed.\n");
 	return (0);
 }

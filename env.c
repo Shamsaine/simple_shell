@@ -1,9 +1,12 @@
 #include "s_sh.h"
 
+/**
+ * printenv - function that prints environment variables
+ *
+ */
 
-void printEnvironment()
+void printenv(void)
 {
-	extern char **environ;
 	char **env;
 
 	printf("Current Environment:\n");

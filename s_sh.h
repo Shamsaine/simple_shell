@@ -11,11 +11,13 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
+extern char **environ;
+
 void show(void);
 void errorhandle(char *command);
 void process(char *command);
 char *get_path(const char *command);
-void exitShell();
-void printEnvironment();
+void shellexit(void);
+void printenv(void);
 
 #endif

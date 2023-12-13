@@ -1,7 +1,11 @@
 #include "s_sh.h"
 
+/**
+ * shellexit - function that exits the shell
+ */
 
-void exitShell() {
-    printf("Exiting...\n");
-    exit(EXIT_SUCCESS);
+void shellexit(void)
+{
+	printf("Exiting...\n");
+	exit(EXIT_SUCCESS);
 }
