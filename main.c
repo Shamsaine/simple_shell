@@ -7,15 +7,15 @@
 
 int main(void)
 {
-	char command[UTTERMOST_LENGTH];
+	char userinput[UTTERMOST_LENGTH];
 	size_t length;
-
+	char *a = "shell closed.";
 	while (1)
 	{
 		show();
-		if (fgets(command, sizeof(command), stdin) == NULL)
+		if (fgets(userinput, sizeof(userinput), stdin) == NULL)
 		{
-			printf("\n");
+			mr_putchar('\n');
 			break;
 		}
 		if (feof(stdin))
@@ -26,25 +26,26 @@ int main(void)
 		{
 			perror("Error reading from stdin");
 		}
-		length = strlen(command);
-		if (length > 0 && command[length - 1] == '\n')
+		length = strlen(userinput);
+		if (length > 0 && userinput[length - 1] == '\n')
 		{
-			command[length - 1] = '\0';
+			userinput[length - 1] = '\0';
 		}
-		if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0)
+		if (strcmp(userinput, "exit") == 0 || strcmp(userinput, "quit") == 0)
 		{
 			shellexit();
 			break;
 		}
-		else if (strcmp(command, "env") == 0)
+		else if (strcmp(userinput, "env") == 0)
 		{
 			printenv();
 		}
 		else
 		{
-			process(command);
+			process(userinput);
 		}
 	}
-	printf("Shell Closed.\n");
+	write(1, a, strlen(a));
+	mr_putchar('\n');
 	return (0);
 }

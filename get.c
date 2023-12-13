@@ -4,27 +4,27 @@
  * @command: parameter
  * Return: always 0
  */
-char *get_path(const char *command)
+char *pathfinder(const char *instruct)
 {
-	char *path_env = getenv("PATH");
-	char *path = strtok(path_env, ":");
-	char *full_path;
+	char *path_environ = getenv("PATH");
+	char *way = strtok(path_environ, ":");
+	char *fullypath;
 
-	while (path != NULL)
+	while (way != NULL)
 	{
-		full_path = malloc(strlen(path) + strlen(command) + 2);
-		if (full_path == NULL)
+		fullypath = malloc(strlen(way) + strlen(instruct) + 2);
+		if (fullypath == NULL)
 		{
 			perror("Error");
 			exit(EXIT_FAILURE);
 		}
-		sprintf(full_path, "%s/%s", path, command);
-		if (access(full_path, X_OK) == 0)
+		sprintf(fullypath, "%s/%s", way, instruct);
+		if (access(fullypath, X_OK) == 0)
 		{
-			return (full_path);
+			return (fullypath);
 		}
-		free(full_path);
-		path = strtok(NULL, ":");
+		free(fullypath);
+		way = strtok(NULL, ":");
 	}
 	return (NULL);
 }

@@ -14,10 +14,11 @@
 extern char **environ;
 
 void show(void);
-void errorhandle(char *command);
-void process(char *command);
-char *get_path(const char *command);
+void errorhandle(char *userinput);
+void process(char *userinput);
+char *pathfinder(const char *userinput);
 void shellexit(void);
 void printenv(void);
+int mr_putchar(char a);
 
 #endif
