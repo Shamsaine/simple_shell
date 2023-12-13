@@ -8,8 +8,10 @@
 void printenv(void)
 {
 	char **env;
+	char *d = "Current Environment:";
 
-	printf("Current Environment:\n");
+	write(1, d, strlen(d));
+	mr_putchar('\n');
 
 	for (env = environ; *env != NULL; env++)
 	{

@@ -1,10 +1,10 @@
 #include "s_sh.h"
 /**
- * get_path - this is a path function
- * @command: parameter
+ * pathfinder - this is a path function
+ * @userinput: parameter
  * Return: always 0
  */
-char *pathfinder(const char *instruct)
+char *pathfinder(const char *userinput)
 {
 	char *path_environ = getenv("PATH");
 	char *way = strtok(path_environ, ":");
@@ -12,13 +12,13 @@ char *pathfinder(const char *instruct)
 
 	while (way != NULL)
 	{
-		fullypath = malloc(strlen(way) + strlen(instruct) + 2);
+		fullypath = malloc(strlen(way) + strlen(userinput) + 2);
 		if (fullypath == NULL)
 		{
 			perror("Error");
 			exit(EXIT_FAILURE);
 		}
-		sprintf(fullypath, "%s/%s", way, instruct);
+		sprintf(fullypath, "%s/%s", way, userinput);
 		if (access(fullypath, X_OK) == 0)
 		{
 			return (fullypath);

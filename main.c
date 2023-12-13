@@ -10,6 +10,8 @@ int main(void)
 	char userinput[UTTERMOST_LENGTH];
 	size_t length;
 	char *a = "shell closed.";
+	char *b = "End of file reached.";
+
 	while (1)
 	{
 		show();
@@ -20,7 +22,8 @@ int main(void)
 		}
 		if (feof(stdin))
 		{
-			printf("End of file reached.\n");
+			write(1, b, strlen(b));
+			mr_putchar('\n');
 		}
 		else if (ferror(stdin))
 		{

@@ -6,6 +6,9 @@
 
 void shellexit(void)
 {
-	printf("Exiting...\n");
+	char *c = "Exiting...";
+
+	write(1, c, strlen(c));
+	mr_putchar('\n');
 	exit(EXIT_SUCCESS);
 }
