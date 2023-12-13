@@ -15,7 +15,8 @@ void printenv(void)
 
 	for (env = environ; *env != NULL; env++)
 	{
-		printf("%s\n", *env);
+		/*printf("%s\n", *env);*/
+		write(1, *env, strlen(*env));
 	}
 }
 
