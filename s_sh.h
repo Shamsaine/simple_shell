@@ -11,7 +11,7 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
-extern char **environ;
+/*extern char **environ;*/
 
 void show(void);
 void errorhandle(char *userinput);
