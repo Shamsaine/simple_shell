@@ -8,9 +8,10 @@
 
 int main(void)
 {
-	char userinput[UTTERMOST_LENGTH];
+	char *userinput = NULL;
 	size_t length;
 	char *a = "shell closed.";
+	ssize_t getline_result;
 
 	if (setenv("TERM", "xterm", 1) == -1)
 	{
@@ -19,7 +20,8 @@ int main(void)
 	while (1)
 	{
 		show();
-		if (fgets(userinput, sizeof(userinput), stdin) == NULL)
+		getline_result = getline(&userinput, &length, stdin);
+		if (getline_result == -1)
 		{
 			mr_putchar('\n');
 			break;
