@@ -4,9 +4,9 @@
  *
  * Return: 0
  */
-void show(void)
+/*void show(void)
 {
 	char *shellname = "MOH & SHAMS> ";
 
 	write(1, shellname, strlen(shellname));
-}
+}*/
