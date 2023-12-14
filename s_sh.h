@@ -20,5 +20,6 @@ char *pathfinder(const char *userinput);
 void shellexit(void);
 void printenv(void);
 int mr_putchar(char a);
+char *my_strtok(char *str, const char *delim);
 
 #endif

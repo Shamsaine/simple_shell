@@ -10,7 +10,6 @@ int main(void)
 	char userinput[UTTERMOST_LENGTH];
 	size_t length;
 	char *a = "shell closed.";
-	char *shellname = "MOH & SHAMS> ";
 
 	/*if (setenv("TERM", "xterm", 1) == -1)
 	{
@@ -18,9 +17,7 @@ int main(void)
 	}*/
 	while (1)
 	{
-		/*show();*/
-		/*char *shellname = "MOH & SHAMS> ";*/
-		write(1, shellname, strlen(shellname));
+		show();
 		if (fgets(userinput, sizeof(userinput), stdin) == NULL)
 		{
 			mr_putchar('\n');
