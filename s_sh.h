@@ -3,6 +3,7 @@
 
 #define UTTERMOST_LENGTH 100
 #define MAX_ARGS 5
+/*#define BUFFER_SIZE 1024*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,5 +21,10 @@ char *pathfinder(const char *userinput);
 void shellexit(void);
 void printenv(void);
 int mr_putchar(char a);
+char *my_getline(void);
+
+
+
+
 
 #endif
