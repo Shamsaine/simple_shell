@@ -3,7 +3,6 @@
 
 #define UTTERMOST_LENGTH 100
 #define MAX_ARGS 5
-/*#define BUFFER_SIZE 1024*/
 
 #include <stdio.h>
 #include <stdlib.h>
