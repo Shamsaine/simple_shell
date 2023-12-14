@@ -6,7 +6,6 @@
 
 void printenv(void)
 {
-	extern char **environ;
 	char **env = environ;
 	char *d = "Current Environment:";
 
