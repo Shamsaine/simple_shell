@@ -11,10 +11,10 @@ int main(void)
 	size_t length;
 	char *a = "shell closed.";
 
-	/*if (setenv("TERM", "xterm", 1) == -1)
+	if (setenv("TERM", "xterm", 1) == -1)
 	{
 		perror("Error setting TERM variable");
-	}*/
+	}
 	while (1)
 	{
 		show();
