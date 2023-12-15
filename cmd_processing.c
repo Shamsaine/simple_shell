@@ -8,7 +8,7 @@
 void process(char *userinput)
 {
 	int i = 0;
-	char *symbol = _strtok(userinput, " ");
+	char *symbol = strtok(userinput, " ");
 	pid_t proc;
 	char *file_path;
 	char *argv[MAX_ARGS];
@@ -16,7 +16,7 @@ void process(char *userinput)
 	while (symbol != NULL && i < MAX_ARGS - 1)
 	{
 		argv[i] = symbol;
-		symbol = _strtok(NULL, " ");
+		symbol = strtok(NULL, " ");
 		i++;
 	}
 	argv[i] = NULL;
