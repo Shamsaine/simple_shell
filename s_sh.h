@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 extern char **environ;
-
+ssize_t the_getline(char **storeline, size_t *bsize, FILE *stream);
 void show(void);
 void errorhandle(char *userinput);
 void process(char *userinput);

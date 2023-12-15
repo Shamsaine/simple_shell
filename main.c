@@ -11,8 +11,6 @@ int main(void)
 	static char *userinput = NULL;
 	static size_t length;
 	char *a = "shell closed.";
-	/*ssize_t getline_result;*/
-	ssize_t read;
 
 	if (setenv("TERM", "xterm", 1) == -1)
 	{
@@ -21,9 +19,7 @@ int main(void)
 	while (1)
 	{
 		show();
-	/*	if (read = getline(&userinput, &length, stdin) == -1)*/
-		read = getline(&userinput,&length, stdin);
-		if (read == -1)
+		if (the_getline(&userinput, &length, stdin) == -1)
 		{
 			mr_putchar('\n');
 			break;
