@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <stdbool.h>
+#include <errno.h>
 
 extern char **environ;
 ssize_t the_getline(char **storeline, size_t *bsize, FILE *stream);
@@ -21,7 +22,7 @@ void shellexit(void);
 void printenv(void);
 int mr_putchar(char a);
 char *my_getline(void);
-
+char *_strtok(char *str, const char *delim);
 
 
 

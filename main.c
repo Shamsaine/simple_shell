@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	static char *userinput = NULL;
+	static char *userinput;
 	static size_t length;
 	char *a = "shell closed.";
 
@@ -43,6 +43,7 @@ int main(void)
 			process(userinput);
 		}
 	}
+	free(userinput);
 	write(1, a, strlen(a));
 	mr_putchar('\n');
 	return (0);
