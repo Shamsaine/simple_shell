@@ -7,7 +7,7 @@
 char *pathfinder(const char *userinput)
 {
 	char *path_environ = getenv("PATH");
-	char *way = _strtok(path_environ, ":");
+	char *way = strtok(path_environ, ":");
 	char *fullypath;
 
 	while (way != NULL)
@@ -24,7 +24,7 @@ char *pathfinder(const char *userinput)
 			return (fullypath);
 		}
 		free(fullypath);
-		way = _strtok(NULL, ":");
+		way = strtok(NULL, ":");
 	}
 	return (NULL);
 }
