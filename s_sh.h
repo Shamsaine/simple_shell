@@ -22,7 +22,7 @@ void shellexit(void);
 void printenv(void);
 int mr_putchar(char a);
 char *my_getline(void);
-
+char *_strtok(char *str, const char *delim);
 
 
 
