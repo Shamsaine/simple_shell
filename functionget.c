@@ -11,7 +11,7 @@
 
 ssize_t the_getline(char **storeline, size_t *bsize, FILE *stream)
 {
-	size_t xx = 0;
+	size_t xx;
 	int y;
 
 	if (storeline == NULL || bsize == NULL)
